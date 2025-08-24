@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动下载 APK 文件</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>正在自动下载 APK 文件...</h1>
+    <p>如果未自动下载，请检查浏览器设置或手动点击下方链接。</p>
+    
+    <!-- 自动下载脚本 -->
+    <script>
+        window.onload = function() {
+            // 方法1：直接跳转下载（适用于大多数情况）
+            window.location.href = '11.apk';
+
+            // 方法2：如果方法1无效，尝试使用 iframe（备用方案）
+            setTimeout(function() {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = '11.apk';
+                document.body.appendChild(iframe);
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
