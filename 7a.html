@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单个视频展示页</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px; /* 可根据需要调整最大宽度 */
+            padding-bottom: 56.25%; /* 保持16:9宽高比 */
+            background-color: #000;
+        }
+
+        .video-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video class="video-item" controls autoplay muted loop>
+            <source src="H.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+</body>
+</html>
