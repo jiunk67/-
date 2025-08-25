@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 修复：补全 meta viewport 标签 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>π颗糖的网站</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 按钮基础样式 */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      min-width: 150px;
+    }
+
+    /* 按钮悬停效果 */
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 按钮点击效果 */
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 按钮波纹效果 */
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    .btn:hover::after {
+      animation: ripple 1.5s infinite;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      20% {
+        transform: scale(25, 25);
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* 按钮颜色变化 */
+    .btn-1 { background: linear-gradient(45deg, #ff9a9e, #fad0c4); }
+    .btn-2 { background: linear-gradient(45deg, #a18cd1, #fbc2eb); }
+    .btn-3 { background: linear-gradient(45deg, #84fab0, #8fd3f4); }
+    .btn-4 { background: linear-gradient(45deg, #ffecd2, #fcb69f); }
+    .btn-5 { background: linear-gradient(45deg, #a3e4d7, #64b3f4); }
+    .btn-6 { background: linear-gradient(45deg, #ffc3a0, #ffafbd); }
+    .btn-7 { background: linear-gradient(45deg, #d4fc79, #96e6a1); }
+    .btn-8 { background: linear-gradient(45deg, #f6d365, #fda085); }
+    .btn-9 { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+    .btn-10 { background: linear-gradient(45deg, #6a11cb, #2575fc); }
+    .btn-11 { background: linear-gradient(45deg, #8e44ad, #3498db); } /* 示例新增颜色 */
+
+    /* 按钮文字描述 */
+    .btn-desc {
+      font-size: 14px;
+      margin-top: 5px;
+      opacity: 0.8;
+      display: block; /* 确保描述文本显示在按钮下方 */
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 600px) {
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 80%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>π颗糖的网站</h1>
+
+  <!-- 音乐模块 -->
+  <div>
+    <audio controls autoplay loop>
+      <!-- 提供多个音频格式以提高兼容性 -->
+      <source src="your-audio-file.mp3" type="audio/mpeg">
+      <source src="your-audio-file.ogg" type="audio/ogg">
+      <source src="your-audio-file.wav" type="audio/wav">
+      您的浏览器不支持音频元素。
+    </audio>
+  </div>
+
+  <div class="button-container">
+    <!-- 按钮1 -->
+    <a href="index1.html" class="btn btn-1">
+      软件专区
+      <span class="btn-desc">下载各类软件</span>
+    </a>
+    
+    <!-- 按钮2 -->
+    <a href="jiaocheng.html" class="btn btn-2">
+      教程专区
+      <span class="btn-desc">学习各类教程</span>
+    </a>
+    
+    <!-- 按钮3 -->
+    <a href="购买.html" class="btn btn-3">
+      数据号购买（包售后，品质高，打不开，请加VPN）
+      <span class="btn-desc">购买数据号</span>
+    </a>
+    
+    <!-- 按钮4 -->
+    <a href="page2.html" class="btn btn-4">
+      功能4
+      <span class="btn-desc">按钮4描述</span>
+    </a>
+
+    <!-- 按钮5 -->
+    <a href="page2.html" class="btn btn-5">
+      功能5
+      <span class="btn-desc">按钮5描述</span>
+    </a>
+
+    <!-- 按钮6 -->
+    <a href="page2.html" class="btn btn-6">
+      功能6
+      <span class="btn-desc">按钮6描述</span>
+    </a>
+
+    <!-- 按钮7 -->
+    <a href="page2.html" class="btn btn-7">
+      功能7
+      <span class="btn-desc">按钮7描述</span>
+    </a>
+
+    <!-- 按钮8 -->
+    <a href="page2.html" class="btn btn-8">
+      功能8
+      <span class="btn-desc">按钮8描述</span>
+    </a>
+
+    <!-- 按钮9 -->
+    <a href="page2.html" class="btn btn-9">
+      功能9
+      <span class="btn-desc">按钮9描述</span>
+    </a>
+
+    <!-- 按钮10 -->
+    <a href="page2.html" class="btn btn-10">
+      功能10
+      <span class="btn-desc">按钮10描述</span>
+    </a>
+
+    <!-- 按钮11 -->
+    <a href="page2.html" class="btn btn-11">
+      功能11
+      <span class="btn-desc">按钮11描述</span>
+    </a>
+  </div>
+
+  <script>
+    // 您现有的脚本代码保持不变
+    // 如果有需要，可以在这里添加更多JavaScript功能
+
+    // 示例：用户首次点击页面后自动播放音频（解决自动播放限制）
+    document.addEventListener('click', function() {
+      var audio = document.querySelector('audio');
+      if (audio && audio.paused) {
+        audio.play().catch(function(error) {
+          console.log('自动播放失败:', error);
+        });
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
